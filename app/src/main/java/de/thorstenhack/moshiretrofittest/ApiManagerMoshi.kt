@@ -19,7 +19,7 @@ object ApiManagerMoshi {
 
     private val TAG = "ApiManagerMoshi"
 
-    private val githubApi by lazy {
+    val githubApi by lazy {
         val loggingInterceptor = HttpLoggingInterceptor(HttpLoggingInterceptor.Logger { Log.d(TAG, it) })
         loggingInterceptor.level = HttpLoggingInterceptor.Level.HEADERS
 
