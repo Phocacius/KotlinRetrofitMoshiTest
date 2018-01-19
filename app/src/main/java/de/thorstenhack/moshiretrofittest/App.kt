@@ -11,14 +11,16 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        val timeMoshi = measureTimeMillis {
-            ApiManagerMoshi.githubApi
-        }
-        Log.d("App", "init moshi took $timeMoshi ms")
 
         val timeGson = measureTimeMillis {
             ApiManagerGson.githubApi
         }
         Log.d("App", "init gson took $timeGson ms")
+
+        val timeMoshi = measureTimeMillis {
+            ApiManagerMoshi.githubApi
+        }
+        Log.d("App", "init moshi took $timeMoshi ms")
+
     }
 }
