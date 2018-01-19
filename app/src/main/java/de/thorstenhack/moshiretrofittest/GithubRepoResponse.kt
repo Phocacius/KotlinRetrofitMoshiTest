@@ -14,7 +14,7 @@ data class GithubRepoResponse(
         val name: String,
         @SerializedName("full_name") @Json(name = "full_name") val fullName: String,
         val owner: Owner,
-        val private: Boolean
+        @SerializedName("private") @Json(name = "private") val isPrivate: Boolean
 )
 
 @JsonSerializable
