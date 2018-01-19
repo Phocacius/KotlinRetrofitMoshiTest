@@ -4,6 +4,9 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
+
 android {
     compileSdkVersion 27
     buildToolsVersion "27.0.3"
@@ -33,9 +36,9 @@ dependencies {
     })
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
-
+    implementation 'se.ansman.kotshi:api:0.3.0'
+    kapt 'se.ansman.kotshi:compiler:0.3.0'
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
-    implementation 'com.squareup.moshi:moshi-kotlin:1.5.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
     implementation "com.squareup.okhttp3:okhttp-urlconnection:3.9.1"
     implementation 'com.squareup.okhttp3:okhttp:3.9.1'

@@ -1,13 +1,10 @@
 package de.thorstenhack.moshiretrofittest
 
 import android.util.Log
-import com.squareup.moshi.KotlinJsonAdapterFactory
-import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Callback
 import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
 import kotlin.system.measureTimeMillis
 
 /**
@@ -30,7 +27,7 @@ object ApiManagerMoshi {
 
         val retrofit = Retrofit.Builder()
                 .baseUrl(BASE_URL)
-                .addConverterFactory(MoshiConverterFactory.create(Moshi.Builder().add(KotlinJsonAdapterFactory()).build()))
+                .addConverterFactory(ApplicationJsonAdapterFactory.INSTANCE)
                 .client(client)
                 .build()
 
